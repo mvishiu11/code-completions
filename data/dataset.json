@@ -1,0 +1,522 @@
+[
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\n",
+    "middle": "app.include_router(agent_router)\n",
+    "suffix": "\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n\n\n@app.get(\"/ping\")\nasync def ping():\n    return {\"message\": \"pong\"}\n\n\n@app.get(\"/",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.17132496287119925,
+      "levenshtein": 134
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n",
+    "middle": "    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n",
+    "suffix": "\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\nif __name__ == \"__main__\":\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.048795003647426664,
+      "chrf": 0.514270173252564,
+      "levenshtein": 53
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\n",
+    "middle": "from dotenv import load_dotenv\n",
+    "suffix": "from fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\ndef create_app():\n    \"\"\"\n    Creates the FastAPI application.\n    \"\"\"\n    app = FastAPI()\n    app.include_router(router)\n    return app\n\n\nif __name__ == \"__main__\":\n    uvicorn.run",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.12915164903305823,
+      "levenshtein": 165
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n",
+    "middle": "    Entry point to run the FastAPI server using Uvicorn.\n",
+    "suffix": "    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\tThis function runs the FastAPI server.\n\t\"\"\"\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n\n\nif __name__ == \"__main__\":\n    main()",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.09759000729485329,
+      "chrf": 0.45888527251112815,
+      "levenshtein": 102
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n",
+    "middle": "\n",
+    "suffix": "from cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\nload_dotenv()\n\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n\nif __name__ == \"__main__\":\n    uvicorn.run(app",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 150
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\n",
+    "middle": "from cmd_chain.agent import agent_router\n",
+    "suffix": "\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\nload_dotenv()\n\napp = FastAPI()\n\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello World\"}\n\nif __name__ == \"__main__\":\n    uvicorn.run(app",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.18830620496641426,
+      "levenshtein": 133
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\n",
+    "middle": "def main():\n",
+    "suffix": "    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 11
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\n",
+    "middle": "from fastapi import FastAPI\n",
+    "suffix": "\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\nload_dotenv()\n\nfrom fastapi import FastAPI\nfrom fastapi.middleware.cors import CORSMiddleware\nfrom fastapi.responses import JSONResponse\nfrom fastapi.staticfiles import StaticFiles\nfrom fastapi.temp",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.1873171623163388,
+      "chrf": 0.5801852643171416,
+      "levenshtein": 172
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n",
+    "middle": "    \"\"\"\n",
+    "suffix": "    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\t:return: None\n    \"\"\"\n    uvicorn.run(app, host=\"0.0.0.0\", port=8000)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.03015113445777637,
+      "chrf": 0.0954385377339342,
+      "levenshtein": 104
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module sets up and runs the FastAPI server.\nThe server includes the agent router to handle requests related to the LLM-based agent.\n\"\"\"\n\nimport uvicorn\nfrom dotenv import load_dotenv\nfrom fastapi import FastAPI\n\nfrom cmd_chain.agent import agent_router\n\nload_dotenv()\n",
+    "middle": "\n",
+    "suffix": "app = FastAPI()\n\napp.include_router(agent_router)\n\n\ndef main():\n    \"\"\"\n    Entry point to run the FastAPI server using Uvicorn.\n    \"\"\"\n    uvicorn.run(\"cmd_chain.server:app\", host=\"0.0.0.0\", port=8000, reload=True)\n\n\nif __name__ == \"__main__\":\n    main()\n",
+    "completion": "\n\napp = FastAPI()\n\napp.include_router(agent_router)\n\nif __name__ == \"__main__\":\n    uvicorn.run(app, host=\"0.0.0.0\", port=80",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 123
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n",
+    "middle": "        root_dir (str | None): Optional root directory for file management tools.\n",
+    "suffix": "    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\n\"\"\"\n\n\n@router.post(\"/agent/request\", response_model=AgentRequest)\nasync def agent_request(request: AgentRequest):\n    \"\"\"\n    Sends a request to the agent.\n\n    Args:\n        request (AgentRequest",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.14564295603558688,
+      "levenshtein": 166
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n",
+    "middle": "\n",
+    "suffix": "    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\tReturns:\n        str: The response from the agent.\n    \"\"\"\n    return custom_agent.process_request(request)\n",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 109
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n",
+    "middle": "\n",
+    "suffix": "    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\tAttributes:\n        id (str): The unique identifier of the request.\n        request_type (str): The type of the request.\n        request_data (dict): The request data.\n        request_data_type (str): The type",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 210
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n",
+    "middle": "    Attributes:\n",
+    "suffix": "        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\n\"\"\"\n\n\n@router.get(\"/agents/{agent_id}\")\nasync def get_agent(agent_id: str):\n    \"\"\"\n    Returns the agent.\n\n    :param agent_id: The agent id.\n    :return:",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.10032467532467539,
+      "levenshtein": 147
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n",
+    "middle": "    else:\n",
+    "suffix": "        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\n@router.get(\"/agent\")\nasync def get_agent_output(request: AgentRequest):\n    \"\"\"\n    Endpoint to get the agent's output.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n   ",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.04046879046879053,
+      "levenshtein": 202
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n",
+    "middle": "        agent = custom_agent\n",
+    "suffix": "    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\n@router.get(\"/agent\")\nasync def get_agent_output(request: AgentRequest):\n    \"\"\"\n    Endpoint to get the agent's output.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n   ",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.2407759700721196,
+      "levenshtein": 187
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n",
+    "middle": "\n",
+    "suffix": "    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\tReturns:\n        str: The response from the agent.\n    \"\"\"\n    return custom_agent.process_request(request)\n",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 109
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n",
+    "middle": "@router.post(\"/agent\")\n",
+    "suffix": "async def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 22
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n",
+    "middle": "\n",
+    "suffix": "router = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n        dict: A response containing the agent's processed output.\n    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\nclass Agent(BaseModel):\n    \"\"\"\n    The agent endpoint.\n    \"\"\"\n    name: str\n    description: str\n    version: str\n    url: str\n    api_version: str\n    api_url: str\n    api_version_url:",
+    "label": 1,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 188
+    }
+  },
+  {
+    "prefix": "\"\"\"\nThis module contains the FastAPI router for the agent endpoint.\n\"\"\"\n\nimport os\nfrom fastapi import APIRouter\nfrom pydantic import BaseModel\nfrom cmd_chain.agent.llm_agent import LLMAgent\n\nrouter = APIRouter()\ncustom_agent = LLMAgent(root_dir=os.getenv(\"AGENT_ROOT_DIR\", os.getcwd()))\n\n\nclass AgentRequest(BaseModel):\n    \"\"\"\n    Represents a request to the agent.\n\n    Attributes:\n        msg (str): The message to be processed by the agent.\n        root_dir (str | None): Optional root directory for file management tools.\n    \"\"\"\n\n    msg: str\n    root_dir: str | None = None\n    reset_memory: bool = False\n\n\n@router.post(\"/agent\")\nasync def process_request(request: AgentRequest):\n    \"\"\"\n    Endpoint to process user requests by interacting with the agent.\n\n    Args:\n        request (AgentRequest): The request containing the user message.\n\n    Returns:\n",
+    "middle": "        dict: A response containing the agent's processed output.\n",
+    "suffix": "    \"\"\"\n    if request.root_dir:\n        agent = LLMAgent(root_dir=request.root_dir)\n    else:\n        agent = custom_agent\n    if request.reset_memory:\n        agent.reset_memory()\n    response = agent.process_request(request.msg)\n    return {\"response\": response}\n",
+    "completion": "\n\n\"\"\"\n",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 65
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n",
+    "middle": "            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n",
+    "suffix": "\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass OpenAISettings(BaseSettings):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.06286946134619315,
+      "chrf": 0.25728751371701586,
+      "levenshtein": 157
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\n",
+    "middle": "from pydantic import BaseModel, field_validator, SecretStr\n",
+    "suffix": "from pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass AgentSettings:\n    \"\"\"\n    Settings for the agent.\n    \"\"\"\n\n    def __init__(self,\n                 agent_id: str,\n                 agent_name: str,\n                 agent_type: str,\n                 agent_config: Optional[",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.171919444935714,
+      "levenshtein": 203
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n",
+    "middle": "    model: Optional[str] = \"gpt-3.5-turbo\"\n",
+    "suffix": "\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass OpenAISettings(BaseSettings):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.1615121585626407,
+      "levenshtein": 176
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n",
+    "middle": "    def load_settings(cls) -> \"Settings\":\n",
+    "suffix": "        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nsettings = Settings()\n",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.39991373706587,
+      "levenshtein": 23
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n",
+    "middle": "        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n",
+    "suffix": "    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass FastAPIConfig(Settings):\n    \"\"\"\n    FastAPI settings.\n\n    Attributes:\n        fastapi_key (str): The FastAPI key.\n        model (str): The FastAPI model to use.\n    \"\"\"\n\n    fastapi_key",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.12289944266668064,
+      "levenshtein": 165
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n",
+    "middle": "\n",
+    "suffix": "\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass OpenAISettings(BaseSettings):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 196
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n",
+    "middle": "    Attributes:\n",
+    "suffix": "        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n .. code-block:: python\n\n        from pydantic import BaseSettings\n\n        class Settings(BaseSettings):\n            api_key: SecretStr = field_validator(\n                ...,\n                allow_reuse=True,\n                pre=True,\n                pre_",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.08221160804747438,
+      "levenshtein": 246
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n",
+    "middle": "    @classmethod\n",
+    "suffix": "    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n",
+    "label": 0.5,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 16
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n    def validate_api_key(cls, value):\n        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n",
+    "middle": "        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n",
+    "suffix": "        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nSettings.update_forward_refs()\n\"\"\"\n",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.1509986147606562,
+      "levenshtein": 57
+    }
+  },
+  {
+    "prefix": "\"\"\"\nConfiguration settings for the agent.\n\"\"\"\n\nfrom typing import Optional\nimport openai\nfrom pydantic import BaseModel, field_validator, SecretStr\nfrom pydantic_settings import BaseSettings, SettingsConfigDict\n\n\nclass OpenAIConfig(BaseModel):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api_key: SecretStr\n    model: Optional[str] = \"gpt-3.5-turbo\"\n\n    @field_validator(\"api_key\")\n    @classmethod\n",
+    "middle": "    def validate_api_key(cls, value):\n",
+    "suffix": "        \"\"\"\n        Validates the OpenAI API key.\n        \"\"\"\n        try:\n            client = openai.OpenAI(api_key=value.get_secret_value())\n            client.chat.completions.create(\n                messages=[{\"role\": \"user\", \"content\": \"Say this is a test\"}],\n                model=\"gpt-3.5-turbo\",\n                max_tokens=10,\n            )\n            return value\n        except Exception as ex:\n            raise ValueError(f\"Invalid OpenAI API key: {ex}\") from ex\n\n\nclass Settings(BaseSettings):\n    \"\"\"\n    Application settings.\n\n    Attributes:\n        openai (Optional[OpenAIConfig]): The OpenAI settings.\n        fastapi (Optional[FastAPIConfig]): The FastAPI settings.\n        langsmith (Optional[LangSmithConfig]): The LangSmith settings (optional).\n    \"\"\"\n\n    model_config = SettingsConfigDict(\n        env_file=\".env\", env_prefix=\"APP_\", env_nested_delimiter=\"__\", extra=\"ignore\"\n    )\n\n    openai: Optional[OpenAIConfig] = None\n\n    @classmethod\n    def load_settings(cls) -> \"Settings\":\n        \"\"\"\n        Loads settings from environment variables or the .env file.\n        Returns:\n            Settings: The populated settings instance.\n        \"\"\"\n        return cls()\n\n\nsettings = Settings.load_settings()\n",
+    "completion": "\n\nclass OpenAISettings(BaseSettings):\n    \"\"\"\n    Settings for OpenAI API.\n\n    Attributes:\n        api_key (str): The OpenAI API key.\n        model (str): The OpenAI model to use.\n    \"\"\"\n\n    api",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.23271886535571853,
+      "levenshtein": 172
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n",
+    "middle": "        \"\"\"\n",
+    "suffix": "        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.012403473458920851,
+      "chrf": 0.054340805426671475,
+      "levenshtein": 211
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n",
+    "middle": "        self.memory = memory if memory is not None else MemorySaver()\n",
+    "suffix": "\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.017541160386140592,
+      "chrf": 0.34318016669956575,
+      "levenshtein": 177
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n",
+    "middle": "\n",
+    "suffix": "        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\n       Args:\n            tool (str): The name of the tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def get_agent_config(self):\n        \"\"\"\n        Returns the agent's config.\n\n        Returns:",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 214
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n",
+    "middle": "        \"\"\"\n",
+    "suffix": "        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.012403473458920851,
+      "chrf": 0.054340805426671475,
+      "levenshtein": 211
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n",
+    "middle": "        self.memory = memory if memory is not None else MemorySaver()\n",
+    "suffix": "\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.017541160386140592,
+      "chrf": 0.34318016669956575,
+      "levenshtein": 177
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n",
+    "middle": "            self.tools.extend(extra_tools)\n",
+    "suffix": "        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.1921362591349486,
+      "levenshtein": 189
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n",
+    "middle": "        Resets the memory of the agent.\n",
+    "suffix": "        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0.017541160386140592,
+      "chrf": 0.295449597694399,
+      "levenshtein": 184
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\n",
+    "middle": "from langgraph.checkpoint.memory import MemorySaver\n",
+    "suffix": "from langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent(object):\n    \"\"\"\n    LLM Agent class for managing the LLM-based agent with dynamic tools.\n    \"\"\"\n\n    def __init__(self,\n                 agent_name: str,\n                 agent_id: str,",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.12777604690278663,
+      "levenshtein": 181
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n",
+    "middle": "        search = DuckDuckGoSearchRun()\n",
+    "suffix": "        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n    def add_tool(self, tool):\n        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 0.08833838575217891,
+      "levenshtein": 196
+    }
+  },
+  {
+    "prefix": "\"\"\"\nLLM Agent class for managing the LLM-based agent with dynamic tools.\n\"\"\"\n\nfrom typing import List, Optional\nimport os\nfrom langchain_community.agent_toolkits import FileManagementToolkit\nfrom langchain_community.tools import DuckDuckGoSearchRun\nfrom langchain_core.messages import HumanMessage\nfrom langchain_openai import ChatOpenAI\nfrom langgraph.checkpoint.memory import MemorySaver\nfrom langgraph.prebuilt import create_react_agent\nfrom langgraph.types import RunnableConfig\nfrom fastapi import HTTPException\nfrom cmd_chain.agent.config import settings\n\n\nclass LLMAgent:\n    \"\"\"\n    Custom class for managing the LLM-based agent with dynamic tools.\n\n    Attributes:\n        memory (MemorySaver): The agent's memory handler.\n        model (ChatOpenAI): The OpenAI model used by the agent.\n        tools (List): List of tools available to the agent.\n        agent_executor: The agent executor initialized with tools and model.\n    \"\"\"\n\n    def __init__(\n        self,\n        root_dir: Optional[str] = None,\n        extra_tools: Optional[List] = None,\n        memory: Optional[MemorySaver] = None,\n    ):\n        \"\"\"\n        Initializes the LLMAgent with the specified parameters.\n\n        Args:\n            root_dir (str): The root directory for file management tools.\n            extra_tools (List): Additional tools to be added to the agent's toolkit.\n            memory (MemorySaver): The memory handler for the agent.\n\n        NOTE: The default tools include DuckDuckGo search and file management tools.\n        \"\"\"\n        if not settings.openai or not settings.openai.api_key:\n            raise ValueError(\"OpenAI configuration is missing\")\n        self.model = ChatOpenAI(\n            api_key=settings.openai.api_key,\n            model=settings.openai.model or \"gpt-3.5-turbo\",\n        )\n\n        self.memory = memory if memory is not None else MemorySaver()\n\n        if not root_dir:\n            root_dir = os.getcwd()\n        fs_tools = FileManagementToolkit(root_dir=root_dir).get_tools()\n        search = DuckDuckGoSearchRun()\n        self.tools = [search, *fs_tools]\n        if extra_tools:\n            self.tools.extend(extra_tools)\n        self.agent_executor = create_react_agent(\n            self.model, self.tools, checkpointer=self.memory\n        )\n\n    def reset_memory(self):\n        \"\"\"\n        Resets the memory of the agent.\n        \"\"\"\n        self.memory = MemorySaver()\n\n",
+    "middle": "    def add_tool(self, tool):\n",
+    "suffix": "        \"\"\"\n        Adds a new tool to the agent's toolkit.\n\n        Args:\n            tool: The tool to be added.\n        \"\"\"\n        self.tools.append(tool)\n\n    def process_request(self, msg: str) -> str:\n        \"\"\"\n        Processes the user request using the agent.\n\n        Args:\n            msg (str): The user's message to be processed.\n\n        Returns:\n            str: The response from the agent.\n        \"\"\"\n        config = RunnableConfig(configurable={\"thread_id\": \"abc123\"})\n        response = \"\"\n        try:\n            for chunk in self.agent_executor.stream(\n                {\"messages\": [HumanMessage(content=msg)]}, config\n            ):\n                if \"agent\" in chunk:\n                    response += (\n                        \"[AGENT] \" + chunk[\"agent\"][\"messages\"][0].content + \"\\n\"\n                    )\n                elif \"tools\" in chunk:\n                    response += \"TOOL\" + chunk[\"tools\"][\"messages\"][0].content + \"\\n\"\n                else:\n                    response += str(chunk) + \"\\n\"\n        except Exception as e:\n            raise HTTPException(status_code=500, detail=str(e)) from e\n        return response.strip()\n",
+    "completion": "\n",
+    "label": 0,
+    "metrics": {
+      "exact_match": 0,
+      "bleu": 0,
+      "chrf": 1e-16,
+      "levenshtein": 29
+    }
+  }
+]
