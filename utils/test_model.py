@@ -2,7 +2,7 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 checkpoint = "bigcode/tiny_starcoder_py"
-device = "cpu" # for GPU usage or "cpu" for CPU usage
+device = "cpu"  # for GPU usage or "cpu" for CPU usage
 
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForCausalLM.from_pretrained(checkpoint).to(device)

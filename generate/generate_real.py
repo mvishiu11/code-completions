@@ -14,7 +14,7 @@ def split_code(file_path, num_examples):
     for _ in range(num_examples):
         split_index = random.randint(5, len(code_lines) - 5)
         prefix = "".join(code_lines[:split_index])
-        suffix = "".join(code_lines[split_index + 1:])
+        suffix = "".join(code_lines[split_index + 1 :])
         middle = code_lines[split_index]
 
         examples.append({"prefix": prefix, "middle": middle, "suffix": suffix})

@@ -21,7 +21,7 @@ def complete_code(prefix, suffix):
 
     completion = tokenizer.decode(output_ids[0], skip_special_tokens=True)
 
-    return completion[len(prefix):]
+    return completion[len(prefix) :]
 
 
 completions = []
