@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "code-completions"
+version = "0.1.0"
+description = ""
+authors = ["mvishiu11 <jakubmuszynski2103@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+torch = "^2.5.0"
+numpy = "1.26.4"
+nltk = "^3.9.1"
+editdistance = "^0.8.1"
+streamlit = "^1.39.0"
+
+[tool.poetry.group.dev.dependencies]
+transformers = "^4.46.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
